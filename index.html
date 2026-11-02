@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IKIGAI | Gastronomía de Autor & Experiencias Privadas</title>
+  <title>IKIGAI | Laboratorio Gastronómico</title>
   
   <!-- Tipografía Editorial (Cormorant Garamond) + Moderna (Inter) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,14 +12,14 @@
   
   <style>
     :root {
-      --bg-main: #0a0c0e;
-      --surface-card: #12161a;
-      --surface-hover: #191e24;
+      --bg-main: #08090a;
+      --surface-card: #101316;
+      --surface-hover: #161b20;
       --accent-gold: #c5a059;
       --accent-gold-hover: #b08d46;
       --text-primary: #f5f5f7;
       --text-muted: #8b929a;
-      --border-subtle: #1e242b;
+      --border-subtle: #1c2127;
       --font-serif: 'Cormorant Garamond', Georgia, serif;
       --font-sans: 'Inter', -apple-system, sans-serif;
     }
@@ -34,31 +34,34 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* HEADER */
+    /* HEADER CON LOGO OFICIAL */
     header {
       position: fixed;
       top: 0;
       width: 100%;
-      padding: 1.5rem 3rem;
+      padding: 0.8rem 3rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(10, 12, 14, 0.92);
-      backdrop-filter: blur(10px);
+      background: rgba(8, 9, 10, 0.94);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-subtle);
       z-index: 100;
     }
 
-    .brand-logo {
-      font-family: var(--font-serif);
-      font-size: 1.8rem;
-      font-weight: 500;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--text-primary);
+    .brand-link {
+      display: flex;
+      align-items: center;
       text-decoration: none;
     }
-    .brand-logo span { color: var(--accent-gold); }
+
+    /* Proporción para el logo oficial */
+    .brand-logo-img {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
 
     nav { display: flex; gap: 2rem; align-items: center; }
     nav a {
@@ -83,17 +86,18 @@
       color: #000 !important;
     }
 
-    /* HERO: PROTAGONISMO DE RESTAURANTE A PUERTA CERRADA */
+    /* HERO: ATMÓSFERA DE MESA ÚNICA Y LABORATORIO CLANDESTINO */
     .hero {
-      min-height: 92vh;
+      min-height: 94vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       padding: 7rem 1.5rem 3rem;
-      background: linear-gradient(180deg, rgba(10, 12, 14, 0.3) 0%, rgba(10, 12, 14, 1) 100%),
-                  url('https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      /* Fotografía de mesa comunal íntima y luz tenue cenital */
+      background: linear-gradient(180deg, rgba(8, 9, 10, 0.45) 0%, rgba(8, 9, 10, 0.96) 100%),
+                  url('https://images.unsplash.com/photo-1578474846511-04ba529f0b88?auto=format&fit=crop&w=1920&q=85') center/cover no-repeat;
     }
 
     .hero-badge {
@@ -108,9 +112,9 @@
 
     .hero-title {
       font-family: var(--font-serif);
-      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-size: clamp(2.6rem, 5.5vw, 4.8rem);
       font-weight: 300;
-      line-height: 1.1;
+      line-height: 1.15;
       max-width: 950px;
       margin-bottom: 1.5rem;
     }
@@ -121,10 +125,11 @@
     }
 
     .hero-desc {
-      color: #cbd2d9;
-      max-width: 650px;
-      font-size: 1.1rem;
+      color: #c0c6cc;
+      max-width: 680px;
+      font-size: 1.05rem;
       font-weight: 300;
+      line-height: 1.7;
       margin-bottom: 2.5rem;
     }
 
@@ -137,11 +142,11 @@
 
     .btn-primary {
       background: var(--accent-gold);
-      color: #0a0c0e;
+      color: #08090a;
       padding: 0.9rem 2.2rem;
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       border-radius: 2px;
@@ -155,7 +160,7 @@
       color: var(--text-primary);
       padding: 0.9rem 2.2rem;
       text-decoration: none;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       border-radius: 2px;
@@ -166,7 +171,7 @@
       border-color: var(--text-primary);
     }
 
-    /* CONTENEDOR PRINCIPAL DE SERVICIOS */
+    /* CONTENEDOR PRINCIPAL */
     .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -189,14 +194,14 @@
       font-size: 0.95rem;
     }
 
-    /* GRID ASIMÉTRICA: PUERTA CERRADA DESTACADO */
+    /* PUERTA CERRADA: SERVICIO PROTAGONISTA CON EMPLATADO DE ALTA GASTRONOMÍA */
     .flagship-card {
       background: var(--surface-card);
       border: 1px solid var(--border-subtle);
       border-radius: 4px;
       overflow: hidden;
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
+      grid-template-columns: 1.25fr 1fr;
       margin-bottom: 3rem;
       transition: border-color 0.3s;
     }
@@ -205,7 +210,7 @@
     .flagship-image {
       width: 100%;
       height: 100%;
-      min-height: 380px;
+      min-height: 420px;
       object-fit: cover;
     }
 
@@ -221,7 +226,7 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--accent-gold);
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
     }
 
     .flagship-content h3 {
@@ -257,7 +262,7 @@
     }
     .compact-card:hover {
       transform: translateY(-3px);
-      border-color: #2e3742;
+      border-color: #2b333c;
     }
 
     .compact-card.mealprep-featured {
@@ -284,7 +289,7 @@
       border: 1px solid var(--accent-gold);
     }
     .status-booking {
-      background: #181d22;
+      background: #161a1e;
       color: var(--text-muted);
       border: 1px solid var(--border-subtle);
     }
@@ -315,7 +320,6 @@
       align-items: center;
       gap: 0.5rem;
     }
-    .action-link:hover { text-decoration: underline; }
 
     /* FOOTER */
     footer {
@@ -327,7 +331,8 @@
     }
 
     @media (max-width: 850px) {
-      header { padding: 1.2rem 1.5rem; }
+      header { padding: 0.8rem 1.5rem; }
+      .brand-logo-img { height: 40px; }
       .flagship-card { grid-template-columns: 1fr; }
       .flagship-content { padding: 2rem; }
       .secondary-grid { grid-template-columns: 1fr; }
@@ -336,73 +341,76 @@
 </head>
 <body>
 
-  <!-- NAVEGACIÓN -->
+  <!-- HEADER -->
   <header>
-    <a href="index.html" class="brand-logo">IKIGAI <span>.</span></a>
+    <a href="index.html" class="brand-link">
+      <!-- Apunta a assets/images/Logo.White.png o directamente a Logo.White.png según donde lo subas -->
+      <img src="assets/images/Logo.White.png" alt="Ikigai Laboratorio Gastronómico" class="brand-logo-img" onerror="this.onerror=null; this.src='Logo.White.png';">
+    </a>
     <nav>
       <a href="#experiencia">Puerta Cerrada</a>
       <a href="meal-prep.html" class="btn-nav-accent">Ordenar Meal Prep</a>
     </nav>
   </header>
 
-  <!-- HERO SECTION: EXPERIENCIA CLANDESTINA / PUERTA CERRADA -->
+  <!-- HERO: MESA CLANDESTINA (8-12 PERSONAS) -->
   <section class="hero">
-    <span class="hero-badge">Experiencia Clandestina & Cocina de Autor</span>
-    <h1 class="hero-title">Una mesa íntima, a <em>puerta cerrada</em>, donde el menú nunca se repite.</h1>
+    <span class="hero-badge">Laboratorio Gastronómico & Mesa Clandestina</span>
+    <h1 class="hero-title">Una única mesa de autor. Un espacio a <em>puerta cerrada</em>.</h1>
     <p class="hero-desc">
-      Alta gastronomía contemporánea reservada para grupos reducidos. Técnica pura, producto noble costarricense e intimidad absoluta.
+      Investigación culinaria, producto de origen y técnica contemporánea para grupos exclusivos de 8 a 12 comensales. Donde el proceso creativo ocurre frente a sus ojos.
     </p>
     <div class="hero-actions">
-      <a href="#experiencia" class="btn-primary">Reservar Fecha Privada</a>
+      <a href="#experiencia" class="btn-primary">Solicitar Fecha Exclusiva</a>
       <a href="meal-prep.html" class="btn-secondary">Explorar Menú Meal Prep</a>
     </div>
   </section>
 
-  <!-- SERVICIOS CON JERARQUÍA ESTRATÉGICA -->
+  <!-- SECCIÓN DIVISIONES -->
   <main class="container">
     <div class="section-intro">
       <h2>Nuestras Expresiones</h2>
-      <p>Desde la exclusividad de un speakeasy gastronómico hasta la disciplina nutricional en su hogar.</p>
+      <p>La investigación del laboratorio traducida en experiencias presenciales y cotidianas.</p>
     </div>
 
-    <!-- 1. SERVICIO PRINCIPAL: PUERTA CERRADA (TAMAÑO DESTACADO) -->
+    <!-- 1. PUERTA CERRADA (FOTOGRAFÍA FINE-DINING CONTEMPORÁNEA) -->
     <article id="experiencia" class="flagship-card">
-      <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&q=80" alt="Restaurante a Puerta Cerrada Ikigai" class="flagship-image">
+      <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=85" alt="Alta Gastronomía Ikigai" class="flagship-image">
       <div class="flagship-content">
         <span class="flagship-tag">Experiencia Insignia</span>
         <h3>Restaurante a Puerta Cerrada</h3>
         <p>
-          Un formato exclusivo donde las puertas se abren únicamente para usted y sus invitados. Menú degustación por tiempos con maridaje curado, preparado al momento bajo una narrativa gastronómica personalizada.
+          Abrimos las puertas del laboratorio exclusivamente para su grupo. Menús degustación por tiempos con narrativa conceptual, maridajes de autor y técnicas de vanguardia que desafían la cocina convencional.
         </p>
-        <a href="https://wa.me/50688888888?text=Hola,%20quisiera%20solicitar%20información%20para%20una%20reserva%20a%20Puerta%20Cerrada" target="_blank" class="btn-primary" style="text-align: center; width: fit-content;">Solicitar Disponibilidad</a>
+        <a href="https://wa.me/50688888888?text=Hola,%20quisiera%20solicitar%20información%20para%20una%20mesa%20privada%20en%20Ikigai" target="_blank" class="btn-primary" style="text-align: center; width: fit-content;">Consultar Disponibilidad</a>
       </div>
     </article>
 
-    <!-- 2. SERVICIOS COMPLEMENTARIOS: TAMAÑO MÁS PEQUEÑO / BALANCEADO -->
+    <!-- 2. SERVICIOS SECUNDARIOS -->
     <div class="secondary-grid">
       
-      <!-- MEAL PREP (SISTEMA OPERATIVO / E-COMMERCE) -->
+      <!-- MEAL PREP -->
       <article class="compact-card mealprep-featured">
         <div class="compact-header">
-          <span style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-gold);">Bienestar Diario</span>
+          <span style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-gold);">Bienestar & Precisión</span>
           <span class="status-badge status-active">E-Commerce Activo</span>
         </div>
-        <h4>Meal Prep Gourmet</h4>
+        <h4>Meal Prep de Autor</h4>
         <p>
-          Cocina al vacío (sous-vide), porciones calibradas al gramo y entregas semanales programadas en el GAM. Alta cocina lista en 3 minutos.
+          La precisión nutricional y técnica del laboratorio trasladada a su semana. Empacado al vacío, porciones calibradas al gramo y despacho programado en el GAM.
         </p>
         <a href="meal-prep.html" class="action-link">Armar mi Selección Semanal &rarr;</a>
       </article>
 
-      <!-- CATERING & EVENTOS PRIVADOS -->
+      <!-- CATERING PRIVADO -->
       <article class="compact-card">
         <div class="compact-header">
-          <span style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted);">Eventos & Empresas</span>
+          <span style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted);">Eventos & Atelier</span>
           <span class="status-badge status-booking">Bajo Cotización</span>
         </div>
-        <h4>Catering Privado</h4>
+        <h4>Catering & Atelier Privado</h4>
         <p>
-          Propuestas a la medida para ocasiones corporativas, cocteles de autor y recepciones. Montaje sobrio y servicio de sala impecable.
+          Propuestas conceptuales a medida para recepciones íntimas y corporativas de alto perfil. Montaje arquitectónico y servicio impecable.
         </p>
         <a href="https://wa.me/50688888888?text=Hola,%20quisiera%20cotizar%20un%20servicio%20de%20Catering" target="_blank" class="action-link">Cotizar Evento &rarr;</a>
       </article>
@@ -412,9 +420,9 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>&copy; 2026 IKIGAI Costa Rica. Todos los derechos reservados.</p>
-    <p style="margin-top: 0.5rem; font-size: 0.75rem; color: #586069;">
-      Tratamiento confidencial de datos personales conforme a la Ley N° 8968.
+    <p>&copy; 2026 IKIGAI Laboratorio Gastronómico. San José, Costa Rica.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.75rem; color: #525a62;">
+      Cumplimiento de Privacidad y Tratamiento de Datos Personales (Ley N° 8968).
     </p>
   </footer>
 
