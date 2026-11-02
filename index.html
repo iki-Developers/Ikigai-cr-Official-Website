@@ -13,7 +13,7 @@
     "@type": "Restaurant",
     "name": "Ikigai Laboratorio Gastronómico",
     "image": "assets/images/Logo.White.png",
-    "telephone": "+50688888888",
+    "telephone": "+50660845444",
     "email": "contacto@ikigai-cr.com",
     "url": "https://www.ikigai-cr.com",
     "priceRange": "$$$$",
@@ -24,15 +24,8 @@
       "addressRegion": "San José",
       "addressCountry": "CR"
     },
-    "areaServed": [
-      "San José",
-      "Escazú",
-      "Santa Ana",
-      "Heredia",
-      "Curridabat",
-      "Gran Área Metropolitana"
-    ],
-    "description": "Laboratorio gastronómico, mesa clandestina a puerta cerrada para grupos reducidos, catering privado y sistema de Meal Prep de alta gama en Costa Rica."
+    "areaServed": "Gran Área Metropolitana (GAM)",
+    "description": "Laboratorio gastronómico, restaurante exclusivo a puerta cerrada para 8 a 12 comensales, catering privado y servicio de Meal Prep en Costa Rica."
   }
   </script>
   
@@ -69,7 +62,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* HEADER CON NAVEGACIÓN COMPLETA */
+    /* HEADER */
     header {
       position: fixed;
       top: 0;
@@ -123,7 +116,7 @@
       color: #000 !important;
     }
 
-    /* HERO: MESA CLANDESTINA */
+    /* HERO */
     .hero {
       min-height: 92vh;
       display: flex;
@@ -211,7 +204,7 @@
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 5rem 1.5rem 3rem;
+      padding: 5rem 1.5rem 2rem;
     }
 
     .section-intro {
@@ -230,7 +223,7 @@
       font-size: 0.95rem;
     }
 
-    /* PUERTA CERRADA: SERVICIO PROTAGONISTA */
+    /* PUERTA CERRADA */
     .flagship-card {
       background: var(--surface-card);
       border: 1px solid var(--border-subtle);
@@ -282,7 +275,7 @@
       margin-bottom: 2rem;
     }
 
-    /* PILARES SECUNDARIOS (MEAL PREP & CATERING) */
+    /* GRID SECUNDARIA */
     .secondary-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -360,13 +353,40 @@
       gap: 0.5rem;
     }
 
-    /* SECCIÓN DE CONTACTO & UBICACIÓN */
+    /* SECCIÓN CONTACTO & UBICACIÓN: SEPARADA Y CON ENCABEZADO PROPIO */
     .contact-section {
       max-width: 1200px;
-      margin: 2rem auto 0;
-      padding: 4rem 1.5rem;
+      margin: 6rem auto 3rem;
+      padding: 4rem 1.5rem 0;
       border-top: 1px solid var(--border-subtle);
-      scroll-margin-top: 90px;
+      scroll-margin-top: 100px;
+    }
+
+    .contact-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .contact-header span {
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-header h2 {
+      font-family: var(--font-serif);
+      font-size: 2.3rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-header p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
     }
 
     .contact-grid {
@@ -380,6 +400,8 @@
       border: 1px solid var(--border-subtle);
       padding: 2.5rem;
       border-radius: 4px;
+      display: flex;
+      flex-direction: column;
     }
 
     .contact-label {
@@ -393,7 +415,7 @@
 
     .contact-card h3 {
       font-family: var(--font-serif);
-      font-size: 1.8rem;
+      font-size: 1.7rem;
       font-weight: 400;
       margin-bottom: 1rem;
     }
@@ -405,6 +427,7 @@
       text-align: center;
       font-size: 0.8rem;
       color: var(--text-muted);
+      margin-top: 4rem;
     }
 
     @media (max-width: 900px) {
@@ -421,7 +444,7 @@
 </head>
 <body>
 
-  <!-- HEADER CON ARQUITECTURA DE NAVEGACIÓN COMPLETA -->
+  <!-- HEADER -->
   <header>
     <a href="index.html" class="brand-link">
       <img src="assets/images/Logo.White.png" alt="Ikigai Laboratorio Gastronómico" class="brand-logo-img" onerror="this.onerror=null; this.src='Logo.White.png';">
@@ -434,7 +457,7 @@
     </nav>
   </header>
 
-  <!-- HERO: MESA LARGA COMUNAL ÚNICA PREPARADA -->
+  <!-- HERO -->
   <section class="hero">
     <span class="hero-badge">Laboratorio Gastronómico & Mesa Clandestina</span>
     <h1 class="hero-title">Una única mesa de autor. Un espacio a <em>puerta cerrada</em>.</h1>
@@ -454,7 +477,7 @@
       <p>La investigación del laboratorio traducida en experiencias presenciales y cotidianas.</p>
     </div>
 
-    <!-- 1. PUERTA CERRADA: EMPLATADO TÉCNICO TERMINADO -->
+    <!-- 1. PUERTA CERRADA -->
     <article id="experiencia" class="flagship-card">
       <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=85" alt="Plato Fine Dining Ikigai" class="flagship-image">
       <div class="flagship-content">
@@ -463,7 +486,7 @@
         <p>
           Abrimos las puertas del laboratorio exclusivamente para su grupo. Menús degustación por tiempos con narrativa conceptual, maridajes de autor y técnicas de vanguardia que desafían la cocina convencional.
         </p>
-        <a href="https://wa.me/50688888888?text=Hola,%20quisiera%20solicitar%20información%20para%20una%20mesa%20privada%20en%20Ikigai" target="_blank" class="btn-primary" style="text-align: center; width: fit-content;">Consultar Disponibilidad</a>
+        <a href="https://wa.me/50660845444?text=Hola,%20quisiera%20solicitar%20información%20para%20una%20mesa%20privada%20en%20Ikigai" target="_blank" class="btn-primary" style="text-align: center; width: fit-content;">Consultar Disponibilidad</a>
       </div>
     </article>
 
@@ -483,7 +506,7 @@
         <a href="meal-prep.html" class="action-link">Armar mi Selección Semanal &rarr;</a>
       </article>
 
-      <!-- CATERING PRIVADO (CON IDENTIFICADOR DE ANCLAJE) -->
+      <!-- CATERING PRIVADO -->
       <article id="catering-section" class="compact-card">
         <div class="compact-header">
           <span style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted);">Eventos & Atelier</span>
@@ -493,54 +516,60 @@
         <p>
           Propuestas conceptuales a medida para recepciones íntimas y corporativas de alto perfil. Montaje arquitectónico y servicio impecable.
         </p>
-        <a href="https://wa.me/50688888888?text=Hola,%20quisiera%20cotizar%20un%20servicio%20de%20Catering" target="_blank" class="action-link">Cotizar Evento &rarr;</a>
+        <a href="https://wa.me/50660845444?text=Hola,%20quisiera%20cotizar%20un%20servicio%20de%20Catering" target="_blank" class="action-link">Cotizar Evento &rarr;</a>
       </article>
 
     </div>
   </main>
 
-  <!-- SECCIÓN CONTACTO, LOGÍSTICA & UBICACIÓN -->
+  <!-- SECCIÓN INDEPENDIENTE: CONTACTO, LOGÍSTICA & SEDE -->
   <section id="contacto" class="contact-section">
+    <div class="contact-header">
+      <span>Operaciones & Logística</span>
+      <h2>Presencia & Cobertura</h2>
+      <p>Canales oficiales de atención, sede central y alcance de distribución.</p>
+    </div>
+
     <div class="contact-grid">
       
-      <!-- COLUMNA 1: ATELIER / ESPACIO FÍSICO -->
+      <!-- COLUMNA 1: SEDE DEL LABORATORIO & PICKUP -->
       <div class="contact-card">
-        <span class="contact-label">Ubicación & Acceso</span>
+        <span class="contact-label">Sede Central & Retiro</span>
         <h3>El Atelier</h3>
         <p style="color: var(--text-primary); font-size: 0.95rem; line-height: 1.6;">
-          San José, Costa Rica.<br>
-          <span style="color: var(--accent-gold); font-size: 0.85rem;">
-            Espacio confidencial reservado exclusivamente bajo confirmación previa.
-          </span>
+          San José, Costa Rica.
         </p>
-        <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
-          La dirección exacta y las instrucciones de acceso se envían al formalizar su reserva.
+        <p style="margin-top: 0.8rem; font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; flex-grow: 1;">
+          Sede del laboratorio disponible para cenas privadas bajo reserva previa y punto habilitado de retiro presencial para órdenes de Meal Prep.
         </p>
+        <span style="display: block; margin-top: 1rem; color: var(--accent-gold); font-size: 0.82rem; letter-spacing: 0.05em;">
+          Ubicación disponible en Google Maps
+        </span>
       </div>
 
-      <!-- COLUMNA 2: COBERTURA MEAL PREP -->
+      <!-- COLUMNA 2: COBERTURA MEAL PREP GAM -->
       <div class="contact-card">
         <span class="contact-label">Logística Meal Prep</span>
         <h3>Rutas de Despacho</h3>
-        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
-          Entregas programadas en el Gran Área Metropolitana (GAM):<br>
-          <span style="color: var(--text-primary);">
-            San José, Escazú, Santa Ana, Belén, Heredia y Curridabat.
-          </span>
+        <p style="color: var(--text-primary); font-size: 0.95rem; line-height: 1.6;">
+          Gran Área Metropolitana (GAM)
         </p>
-        <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--accent-gold);">
-          Días oficiales de entrega: Domingos y Lunes.
+        <p style="margin-top: 0.8rem; font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; flex-grow: 1;">
+          Distribución calibrada y transporte especializado con cadena de frío garantizada hasta la puerta de su residencia u oficina.
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--accent-gold); font-weight: 500;">
+          Entregas programadas: Domingos y Miércoles.
         </p>
       </div>
 
-      <!-- COLUMNA 3: COMUNICACIÓN DIRECTA -->
+      <!-- COLUMNA 3: ATENCIÓN DIRECTA -->
       <div class="contact-card">
         <span class="contact-label">Atención & Consultas</span>
         <h3>Contacto Directo</h3>
-        <ul style="list-style: none; margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.85rem;">
+        <ul style="list-style: none; margin-top: 0.5rem; display: flex; flex-direction: column; gap: 1rem;">
           <li>
             <strong style="color: var(--text-primary); font-size: 0.82rem; display: block; text-transform: uppercase; letter-spacing: 0.05em;">WhatsApp Concierge:</strong>
-            <a href="https://wa.me/50688888888?text=Hola,%20quisiera%20consultar%20sobre%20los%20servicios%20de%20Ikigai" target="_blank" style="color: var(--accent-gold); text-decoration: none; font-size: 0.95rem;">+506 8888-8888</a>
+            <a href="https://wa.me/50660845444?text=Hola,%20quisiera%20consultar%20sobre%20los%20servicios%20de%20Ikigai" target="_blank" style="color: var(--accent-gold); text-decoration: none; font-size: 1rem; font-weight: 500;">+506 6084-5444</a>
           </li>
           <li>
             <strong style="color: var(--text-primary); font-size: 0.82rem; display: block; text-transform: uppercase; letter-spacing: 0.05em;">Correo Corporativo:</strong>
